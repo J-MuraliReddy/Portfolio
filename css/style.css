@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Ensures the body and html take up the full viewport height #0e1429*/
+html, body {
+    background:#0e1429;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h1 {
+    color: rgb(255, 255, 255);
+    font-weight: 795;
+    font-size: 3.5vw; /* Responsive font size */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Center content in wrapper and make it responsive */
+.wrapper {
+    display: flex; /* Changed to flexbox */
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+/* Static text styling */
+.wrapper .static-txt {
+    color: rgb(254, 252, 252);
+    font-size: 3vw; /* Responsive font size */
+    font-weight: bolder;
+    margin-right: 15px; /* Space between static and dynamic text */
+}
+
+/* Dynamic text container */
+.wrapper .dynamic-txts {
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.dynamic-txts li {
+    color: rgb(71, 244, 89);
+    font-size: 2.7vw; /* Responsive font size */
+    font-weight: 500;
+    animation: slide 6s steps(4) infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(0); /* Start from the top */
+    }
+    100% {
+        transform: translateY(-360px); /* Move up by the total height of items */
+    }
+}
+
+.dynamic-txts li span {
+    position: relative;
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    overflow-x: hidden;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    height: 100%;
+    width: 100%;
+    background: #0e1429;
+    animation: typing 1.5s steps(17) infinite;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+/* Navbar styling */
+.nav-bar1 ul {
+    list-style-type: none;
+    border-radius: 10px;
+    box-shadow: 1px 1.5px 10px 2px skyblue;
+    border: 1px solid rgb(28, 20, 20);
+    padding: 20px 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.nav-bar1 li {
+    margin: 0 20px;
+}
+
+.nav-bar1 ul a {
+    text-decoration: none;
+    color: rgb(250, 246, 246);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5vw; /* Responsive font size */
+    position: relative;
+}
+
+.nav-bar1 ul a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: rgb(105, 133, 108);
+    transition: width 0.5s ease;
+    
+}
+
+.nav-bar1 ul a:hover::after {
+    width: 100%;
+}
+.nav-bar1 ul a:hover::after{
+    border: 1px none rgb(252, 248, 250);
+    background-color: rgb(189, 189, 171);
+    border-radius: 8px;
+    padding: 1px 4px;
+    box-sizing: border-box;
+    transition-duration: 0.8s;
+    height: 3px;
+}
+.nav-bar1 ul a:hover{
+    transition-duration: 1.3s;
+    color: #0bfbf3;
+    box-shadow: 0px 0px 3px none rgb(116, 105, 89);
+}
+.nav-bar1 ul a::after{
+    content: "";
+    border: 1px solid rgb(252, 248, 250);
+    background-color: rgb(253, 253, 224);
+    border-radius: 8px;
+    padding: 1px 4px;
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+    height: 3px;
+    
+}
+
+/* Icons styling */
+.icons {
+    display: flex;
+    align-self: self-start;
+    gap: 20px; /* Spacing between icons */
+    margin-top: 20px;
+}
+
+.icons span {
+    width: 60px; /* Adjust as needed */
+    height: 60px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:2px solid rgb(57, 50, 50);
+    background: rgba(147, 129, 129, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(2.7vw); /* Frosted glass effect */
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 0px 10px rgba(200, 192, 192, 0.2); /* Optional shadow for a subtle 3D effect */
+    transition: background 0.3s, transform 0.5s; /* Smooth transitions */
+}
+
+.icons a {
+    text-decoration: none;
+    color: #fff; /* White color for the icons */
+    font-size: 24px; /* Adjust icon size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons span:hover {
+    background: rgba(239, 237, 240, 0.2); /* Slightly more opaque on hover */
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+.img1 img{
+    width: 17vw; /* Use viewport width for responsiveness */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    position: absolute;
+    top: 78px;
+    right: 20vw; /* Adjust the right position using viewport width */
+}
+@media (max-width: 968px) {
+    .img1 img {
+        width: 25vw; /* Increase size for smaller screens */
+        top: 70px;
+        right: 15vw; /* Adjust the right position */
+    }
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 6vw;
+    }
+
+    .nav-bar1 ul a {
+        font-size: 3vw;
+        padding-bottom: 5px;
+    }
+
+    .wrapper .static-txt {
+        font-size: 6vw;
+    }
+
+    .dynamic-txts li {
+        font-size: 5vw;
+    }
+
+    .icons span {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .icons a {
+        font-size: 4vw;
+    }
+    
+    .img1 img {
+        width: 30vw; /* Increase size for smaller screens */
+        top: 70px;
+        right: 10vw; /* Adjust the right position */
+    }
+}
+
+@media (max-width: 480px) {
+    .container h1 {
+        font-size: 7vw;
+    }
+
+    .nav-bar1 ul a {
+        font-size: 4vw;
+        padding-bottom: 5px;
+    }
+
+    .wrapper .static-txt {
+        font-size: 8vw;
+    }
+
+    .dynamic-txts li {
+        font-size: 6vw;
+    }
+
+    .icons span {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .icons a {
+        font-size: 3vw;
+    }
+
+    .img1 img {
+        width: 40vw; /* Further increase size for very small screens */
+        top: 70px;
+        right: 10vw; /* Keep consistent with above */
+    }
+    
+}

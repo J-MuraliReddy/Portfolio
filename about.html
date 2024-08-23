@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+}
+
+        .container1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            background-color: rgb(34, 44, 44);
+            width: 100%;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .container1 h1 {
+            background-color: rgb(34, 44, 44);
+            color: rgb(247, 247, 242);
+            font-size: 3vw;
+            font-family: 'Poppins', sans-serif;
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .nav-bar2 ul {
+            background-color: rgb(34, 44, 44);
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+            font: 1em sans-serif;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .nav-bar2 ul a {
+            background-color: rgb(34, 44, 44);
+            text-decoration: none;
+            color: rgb(226, 238, 238);
+            font-weight: 550;
+            font-family: Arial, sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.3vw;
+            position: relative;
+            padding: 4px;
+            transition: color 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .nav-bar2 ul a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 1.2px;
+            background-color: rgb(167, 201, 210);
+            transition: width 0.5s ease;
+        }
+
+        .nav-bar2 ul a:hover::after {
+            width: 100%;
+            background-color: rgb(184, 218, 235);
+            border-radius: 8px;
+            height: 3px;
+        }
+
+        .nav-bar2 ul a:hover {
+            color: #f9fbfd;
+            box-shadow: 2px 2px 6px 1px rgb(124, 167, 194);
+        }
+
+        @media (max-width: 1024px) {
+            .container1 {
+                gap: 30px;
+            }
+
+            .container1 h1 {
+                font-size: 4vw;
+            }
+
+            .nav-bar2 ul {
+                gap: 20px;
+            }
+
+            .nav-bar2 ul a {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container1 {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .container1 h1 {
+                font-size: 5vw;
+            }
+
+            .nav-bar2 ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .nav-bar2 ul a {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container1 {
+                gap: 10px;
+            }
+
+            .container1 h1 {
+                font-size: 6vw;
+            }
+
+            .nav-bar2 ul a {
+                font-size: 1em;
+            }
+        }
+
+    .img_about {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: whitesmoke;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.img_about .under {
+    display: block;
+    font-size: 2em;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    font-weight: 700; /* Bold text */
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Elegant serif font */
+}
+
+.img_about .under::after {
+    content: '';
+    display: block;
+    width: 3%; /* Responsive width */
+    height: 3px; /* Thick line */
+    background-color: rgb(184, 218, 235); /* Light color for the underline */
+    position: absolute;
+    bottom: -7px; /* Position the underline below the text */
+    left: 50.5%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the underline */
+    transition: height 0.3s ease; /* Smooth transition for height */
+}
+
+@media (max-width: 768px) {
+    .img_about span::after {
+        width: 30%; /* Adjust width for smaller screens */
+        height: 3px; /* Thinner line for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .img_about span::after {
+        width: 40%; /* Adjust width for even smaller screens */
+    }
+}
+
+.img_about_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.img_about img {
+    box-shadow: 2px 2px 8px 4px rgb(74, 79, 74);
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    border-radius: 10%;
+    margin-right: 50px;
+    justify-content: center;
+}
+
+.img_about p {
+    flex: 1;
+    text-align: center;
+    max-width: 590px;
+    margin-bottom: 200px;
+}
+
+@media (min-width: 768px) {
+    .img_about_content {
+        flex-direction: row;
+    }
+
+    .img_about p {
+        text-align: left;
+    }
+}
+
+.details {
+            text-align: left;
+            padding: 10px;
+            width: 58%;
+            border-radius: 2PX;
+            margin-top: 20px;
+            margin-left: 625px;
+            border-radius: 2px;
+            position: relative;
+            
+        }
+ .details ul {
+           box-shadow: 0 0 8px 2px rgb(239, 231, 159);
+           list-style: none;
+           position: absolute;
+           bottom: 50px;
+           padding: 5px;
+           border-radius: 2px;
+        }
+
+ .details li {
+            display: flex;
+            padding: 4.5px 20px;
+            
+        }
+        
+ .details b {
+            width: 150px; /* Ensure all labels are equal width */
+            display: inline-block;
+            color: rgb(212, 243, 233);
+        }
+
+ .details span {
+            flex-grow: 1;
+            color: rgb(252, 254, 255);
+        }
+
+        @media (min-width: 768px) {
+            .img_about_content {
+                flex-direction: row;
+            }
+
+            .details {
+                order: -1; /* Place above the paragraph */
+                width: 45%;
+                margin-right: 50px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+.details {
+        width: 70%; /* Adjust width for medium screens */
+        margin-left: auto; /* Center on smaller screens */
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .details {
+        width: 90%; /* Adjust width for smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .details {
+        width: 100%; /* Full width for very small screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}        
+    </style>
+</head>
+<body>
+    <header class="container1">
+        <h1>J MURALIREDDY</h1>
+        <nav class="nav-bar2">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="img_about">
+        <span class="under">About</span>
+        <div class="img_about_content">
+            <img src="./images/murali.png" alt="profile">
+            <p>Seeking a challenging position in a dynamic organization where I can leverage my skills and experience to contribute to innovative projects. Dedicated to continuous learning and professional growth, aiming to make a meaningful impact. Motivated to collaborate with a diverse team to achieve shared goals and drive success.</p>
+        </div>
+        <div class="details">
+            <ul>
+                <li><b>Name:</b> <span>J MURALI REDDY</span></li>
+                    <li><b>Profile:</b> <span>PYTHON FULL STACK DEVELOPER</span></li>
+                    <li><b>City:</b> <span>TIRUPATHI, 517501</span></li>
+                    <li><b>Email:</b> <span>muralireddy8801@gmail.com</span></li>
+                    <li><b>Phone No:</b> <span>8801079099</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

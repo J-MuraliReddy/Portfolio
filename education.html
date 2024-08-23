@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar and Education Section</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(34, 44, 44);
+            font-family: 'Poppins', sans-serif;
+            color: rgb(247, 247, 242);
+        }
+
+        .container3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            padding: 20px;
+            flex-wrap: wrap;
+            background-color: rgb(34, 44, 44);
+        }
+
+        .container3 h1 {
+            font-size: 3vw;
+            text-align: center;
+        }
+        
+        .nav-bar3 ul {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+            justify-content: center;
+            padding: 10px;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        /* New stylish hover effect */
+        .nav-bar3 ul a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 1.3vw;
+            color: rgb(226, 238, 238);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            overflow: hidden;
+            transition: 0.5s;
+            font-weight: 550;
+            z-index: 1;
+        }
+
+        .nav-bar3 ul a:hover {
+            color: #f9fbfd;
+            background-color: transparent;
+        }
+
+        .nav-bar3 ul a::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(120deg, #f9fbfd, #b8dae4);
+            transition: width 0.4s ease-in-out;
+        }
+
+        .nav-bar3 ul a:hover::before {
+            width: 100%;
+        }
+
+        .education {
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .education h1 {
+            margin-left: 0;
+            display: inline-block;
+            position: relative;
+            font-size: 2em;
+        }
+
+        .education h1::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 120%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #ffffff;
+        } 
+
+        /* Flex container for side-by-side boxes */
+        .education .content-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* Content boxes */
+        .education .content-box {
+            flex: 1;
+            background-color: rgb(55, 65, 65);
+            border-radius: 8px;
+            padding: 20px;
+            color: rgb(226, 238, 238);
+            text-align: left;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .container3 {
+                gap: 30px;
+            }
+
+            .container3 h1 {
+                font-size: 4vw;
+            }
+
+            .nav-bar3 ul {
+                gap: 20px;
+            }
+
+            .nav-bar3 ul a {
+                font-size: 1.2em;
+            }
+
+            .education .content-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container3 {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .container3 h1 {
+                font-size: 5vw;
+            }
+
+            .nav-bar3 ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .nav-bar3 ul a {
+                font-size: 1.2em;
+            }
+
+            .education h1 {
+                font-size: 1.8em;
+            }
+
+            .education h1::before {
+                width: 15px;
+                left: -25px;
+            }
+
+            .education .content-box {
+                padding: 15px;
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container3 {
+                gap: 10px;
+            }
+
+            .container3 h1 {
+                font-size: 6vw;
+            }
+
+            .nav-bar3 ul a {
+                font-size: 1em;
+            }
+
+            .education h1 {
+                font-size: 1.5em;
+            }
+
+            .education h1::before {
+                width: 10px;
+                left: -20px;
+            }
+
+            .education .content-box {
+                padding: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container3">
+        <header>
+            <h1>J MURALIREDDY</h1>
+            <nav class="nav-bar3">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="education">
+        <h1>Education</h1>
+        <div class="content-container">
+            <div class="content-box">
+                <!-- Example content -->
+                
+                <p>High School: Audi Sankara Techno School</p>
+            <ul>
+                <li>English</li>
+                <li>Mathematics</li>
+                <li>Science</li>
+                <li>Other Standard SUbjects</li>
+            </ul>
+            </div>
+            <div class="content-box">
+                <!-- Example content -->
+           
+                <p>Diploma: Seshachala Polytechnic College</p>
+                <ul>
+                    <li>Engineering Mathematics</li>
+                    <li>Engineering Physics</li>
+                    <li>Fluid Mechanics & Hydraulic Machinery</li>
+                    <li>Other Standard Subjects</li>
+                </ul>
+            </div>
+            <div class="content-box">
+                <!-- Example content -->
+                <p>B-Tech: Siddhartha Institute of Science and Technology</p>
+                <ul>
+                    <li>Thermodynamics</li>
+                    <li>Engineering Drawing For Mechanical Engineers</li>
+                    <li>Mathematics</li>
+                    <li>Other Standard Subjects</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Contact Section Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(34, 44, 44);
+            font-family: 'Poppins', sans-serif;
+            color: rgb(247, 247, 242);
+        }
+
+        .container7 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 0px;
+            flex-wrap: wrap;
+            background-color: rgb(58, 70, 70);
+        }
+
+        .container7 h1 {
+            font-size: 3vw;
+            text-align: center;
+        }
+
+        .nav-bar7 ul {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+            justify-content: center;
+            padding: 10px;
+            margin: 0;
+            margin-top: 5px;
+            flex-wrap: wrap;
+        }
+
+        .nav-bar7 ul a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 1vw;
+            color: rgb(226, 238, 238);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            overflow: hidden;
+            transition: 0.5s;
+            font-weight: 550;
+            z-index: 1;
+        }
+
+        .nav-bar7 ul a:hover {
+            color: #f9fbfd;
+            background-color: transparent;
+        }
+
+        .nav-bar7 ul a::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(120deg, #f9fbfd, #b8dae4);
+            transition: width 0.4s ease-in-out;
+        }
+
+        .nav-bar7 ul a:hover::before {
+            width: 100%;
+        }
+
+        .contact {
+            padding: 30px 0;
+            margin-left: 0;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content-box {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .content-box h1 {
+            font-size: 2rem;
+            margin: 0;
+            position: relative;
+           
+        }
+
+        .content-box h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -5px;
+            width: 80px;
+            height: 2px;
+            background-color: #ffffff;
+        }
+
+        .boxes {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .top-row {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .content-box1 {
+            width: 100%;
+            max-width: 400px;
+            background-color: rgb(66, 63, 90);
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .content-box1 .first {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+        }
+
+        .content-box1 .first span {
+            color: #37f91e;
+            font-family: monospace;
+            font-weight: 600;
+        }
+
+        .content-box1 .second {
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            padding-left: 55px;
+        }
+
+        .content-box1 .second h6 {
+            margin: 0;
+            padding: 2px 0;
+            font-size: 0.9vw;
+        }
+
+        .icons {
+            display: flex;
+            gap: 25px;
+            margin-top: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-left: 10px;
+        }
+
+        .icons span {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid rgb(87, 79, 79);
+            background: rgba(250, 246, 246, 0.1);
+            backdrop-filter: blur(2.7vw);
+            border-radius: 50%;
+            box-shadow: 0 0px 10px rgba(200, 192, 192, 0.2);
+            transition: background 0.2s, transform 0.9s;
+        }
+
+        .icons a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .icons span:hover {
+            background: rgba(239, 237, 240, 0.2);
+            transform: scale(1.2);
+        }
+
+        .bottom-row {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .content-box2 {
+            width: 100%;
+            max-width: 400px;
+            background-color: rgb(66, 63, 90);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .content-box2 .first {
+            
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+        }
+
+        .content-box2 .first span {
+            color: #37f91e;
+            font-family: monospace;
+            font-weight: 600;
+            margin-left: 10px;
+            
+        }
+
+        .content-box2 h6 {
+            margin: 0;
+            padding: 15px 0 0 35px;
+            font-size: 0.9vw;
+            color: rgb(247, 247, 242);
+            
+        }
+
+        @media (max-width: 768px) {
+            .boxes {
+                flex-direction: column;
+            }
+
+            .top-row, .bottom-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-box1, .content-box2 {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .icons {
+                flex-direction: row;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container7 h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-bar7 ul a {
+                font-size: 1rem;
+            }
+
+            .contact {
+                margin-left: 0;
+            }
+
+            .bottom-row {
+                flex-direction: column;
+            }
+
+            .content-box1, .content-box2 {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .content-box1 .second h6, .content-box2 h6 {
+                font-size: 1rem;
+                padding: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container7">
+        <h1>J MURALI REDDY</h1>
+        <div class="nav-bar7">
+            <nav>
+                <ul>
+                    <li><a href="home.html"><span>Home</span></a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="contact">
+        <div class="content-container">
+            <div class="content-box">
+                <h1>Contact</h1>
+            </div>
+            <div class="boxes">
+                <div class="top-row">
+                    <div class="content-box1">
+                        <div class="first"><i class="fa-solid fa-location-dot"></i><span>My Address</span></div>
+                        <div class="second">
+                            <h6>Sathyanarayana Puram</h6>
+                            <h6>Tirupathi - 517501</h6>
+                            <h6>Andhra Pradesh</h6>
+                        </div>
+                    </div>
+
+                    <div class="content-box1">
+                        <div class="first"><i class="fa-solid fa-share-nodes"></i><span>Social Profiles</span></div>
+                        <div class="icons">
+                            <span title="Google"><a href="https://mail.google.com/mail/u/1/"><i class="fa-brands fa-google"></i></a></span>
+                            <span title="Github"><a href="https://github.com/J-MuraliReddy"><i class="fa-brands fa-square-github"></i></a></span>
+                            <span title="youtube"><a href="http://youtube.com/@jmrgamingtelugu6644"><i class="fa-brands fa-youtube"></i></a></span>
+                            <span title="Linkdin"><a href="https://www.linkedin.com/in/muralireddy-j-7797a7316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin-in"></i></a></span>
+                            <span title="Instagram"><a href="https://www.instagram.com/muralireddy1447342?igsh=MWxwd3l1emtqeXpuZw=="><i class="fa-brands fa-instagram"></i></a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="content-box2">
+                        <div class="first">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Email</span>
+                            <h6>muralireddy8801@gmail.com</h6>
+                        </div>
+                    </div>
+                    <div class="content-box2">
+                        <div class="first">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>Contact</span>
+                            <h6>
+                                <a href="https://wa.me/918801079099" style="color: inherit; text-decoration: none;">+91 88010 79099 (WhatsApp)</a>
+                            </h6>
+                            <h6>
+                                <a href="tel:+918801079099" style="color: inherit; text-decoration: none;">+91 88010 79099 (Call)</a>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
