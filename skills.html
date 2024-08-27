@@ -3,134 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills</title>
+    <title>Document</title>
     <style>
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: rgb(22, 21, 21);
-}
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: rgb(22, 21, 21);
+        }
 
-.container5 {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    background-color: rgb(44, 47, 80);
-}
+        .container5 {
+            display: flex;
+            justify-content: center; /* Distribute space between title and nav */
+            align-items: center;
+            gap: 80px;
+            padding: 0 20px; /* Add padding */
+            background-color: rgb(44, 47, 80);
+        }
 
-.container5 h1 {
-    display: block;
-    font-size: 40px;
-    color: aliceblue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        .container5 h1 {
+            font-size: 40px;
+            color: aliceblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-.container5 .nav-bar5 ul {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-}
+        .nav-bar5 {
+            display: flex;
+        }
 
-.container5 .nav-bar5 ul a {
-    text-decoration: none;
-    color: rgb(234, 223, 207);
-    font-weight: 700;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
-    position: relative;
-    top: 30px;
-    transition: color 0.3s ease-in-out; /* Smooth color transition */
-}
+        .nav-bar5 ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-.container5 .nav-bar5 ul a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;
-    margin-top: 5px;
-    right: 0;
-    background: blanchedalmond;
-    transition: width 0.3s ease, background-color 0.3s ease;
-}
+        .nav-bar5 ul a {
+            text-decoration: none;
+            color: rgb(234, 223, 207);
+            font-weight: 700;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            position: relative;
+            top: 0;
+            transition: color 0.3s ease-in-out; /* Smooth color transition */
+        }
 
-.container5 .nav-bar5 ul a:hover::after,
-.container5 .nav-bar5 ul a:focus::after {
-    width: 100%;
-    left: 0;
-    background: white; /* Optional: Change underline color on hover/focus */
-}
+        .nav-bar5 ul a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: blanchedalmond;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
 
-.container5 .nav-bar5 ul a:hover,
-.container5 .nav-bar5 ul a:focus {
-    color: white; /* Optional: Change text color on hover/focus */
-}
+        .nav-bar5 ul a:hover::after,
+        .nav-bar5 ul a:focus::after {
+            width: 100%;
+            left: 0;
+            background: white; /* Optional: Change underline color on hover/focus */
+        }
 
+        .nav-bar5 ul a:hover,
+        .nav-bar5 ul a:focus {
+            color: white; /* Optional: Change text color on hover/focus */
+        }
 
-.skills {
-    text-align: center;
-    padding: 20px;
-}
+        /* Hamburger Menu (for mobile view) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
 
-.skills h1 {
-    margin-left: 0;
-    display: inline-block;
-    position: relative;
-    font-size: 2.4em;
-    color: #fdfefd;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
 
-.skills h1::after {
-    content: '';
-    position: absolute;
-    left: 25px;
-    top: 115%;
-    transform: translateY(-50%);
-    width: 70px;
-    height: 3px;
-    background-color: #ffffff;
-}
+        .nav-bar5 ul {
+            display: flex;
+        }
 
-.skills .content-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
-    width: 100%;
-    align-items: center; /* Center the items horizontally */
-}
+        @media (max-width: 768px) {
+            .container5 {
+                flex-direction: column;
+                align-items: center;
+            }
 
-.skills .skill {
-    background-color: rgb(55, 65, 65);
-    border-radius: 8px;
-    padding: 10px;
-    color: rgb(226, 238, 238);
-    text-align: left;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 200%; /* Set a width for the skill box */
-    max-width: 1000px; /* Optional: Limit the max-width */
-}
+            .nav-bar5 {
+                width: 100%;
+                justify-content: center;
+            }
 
-.skills .skill h2 {
-    color: white;
-    width: 100%;
-    text-align: left;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+            .nav-bar5 ul {
+                flex-direction: column;
+                align-items: center;
+                display: none; /* Hide navigation by default on mobile */
+                width: 100%;
+            }
 
-.skills .skill img {
-    width: 150px;
-    height: 120px;
-    border-radius: 8px;
-    padding: 5px;
-    flex-shrink: 0;
-}
+            .nav-bar5 ul.active {
+                display: flex; /* Show navigation when active */
+            }
 
+            .nav-bar5 ul a {
+                font-size: 18px;
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger menu on small screens */
+            }
+        }
+
+        /* Additional styles for active state of hamburger menu */
+        .hamburger.active .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active .line2 {
+            opacity: 0;
+        }
+
+        .hamburger.active .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .skills {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .skills h1 {
+            display: inline-block;
+            position: relative;
+            font-size: 2.4em;
+            color: #fdfefd;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .skills h1::after {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 115%;
+            transform: translateY(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: #ffffff;
+        }
+
+        .skills .content-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+            width: 100%;
+            align-items: center; /* Center the items horizontally */
+        }
+
+        .skills .skill {
+            background-color: rgb(55, 65, 65);
+            border-radius: 8px;
+            padding: 10px;
+            color: rgb(226, 238, 238);
+            text-align: left;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%; /* Set a width for the skill box */
+            max-width: 1000px; /* Optional: Limit the max-width */
+        }
+
+        .skills .skill h2 {
+            color: white;
+            width: 100%;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .skills .skill img {
+            width: 150px;
+            height: 120px;
+            border-radius: 8px;
+            padding: 5px;
+            flex-shrink: 0;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 1024px) {
+            .container5 {
+                flex-wrap: wrap;
+                gap: 20px; /* Adjust the gap for medium screens */
+                padding: 10px; /* Add some padding */
+            }
+
+            .container5 h1 {
+                font-size: 5vw; /* Make the title responsive */
+            }
+
+            .container5 .nav-bar5 ul {
+                gap: 20px; /* Reduce gap between nav items */
+            }
+
+            .container5 .nav-bar5 ul a {
+                font-size: 3vw; /* Make nav links responsive */
+                top: 10px; /* Adjust position */
+            }
+
+            .skills .skill {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 70%;
+            }
+
+            .skills .skill img {
+                width: 50%; /* Make the images responsive */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container5 h1 {
+                font-size: 6vw;
+            }
+
+            .skills .skill {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 70%;
+            }
+
+            .skills .skill img {
+                width: 50%; /* Further reduce the size of the images */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container5 {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .container5 h1 {
+                font-size: 8vw;
+            }
+
+            .container5 .nav-bar5 ul {
+                flex-direction: column;
+                gap: 10px;
+                
+            }
+
+            .container5 .nav-bar5 ul a {
+                font-size: 4vw;
+                top: 0px;
+            }
+
+            .skills .skill {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 70%; /* Reduce width on smaller screens */
+            }
+
+            .skills .skill img {
+                width: 40%; /* Further reduce the image size */
+            }
+        }
 
     </style>
 </head>
@@ -138,9 +289,14 @@ body {
     <div class="container5">
         <h1>J MURALI REDDY</h1>
         <div class="nav-bar5">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="index.html"><span>Home</span></a></li>
+                    <li><a href="home.html"><span>Home</span></a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="education.html">Education</a></li>
                     <li><a href="projects.html">Projects</a></li>
@@ -159,5 +315,13 @@ body {
             <div class="skill"><h2>Tools:</h2><img src="./images/vs code.png" alt=""><img src="./images/figma.png" alt=""><img src="./images/msword.jpeg" alt=""><img src="./images/git.png" alt=""><img src="./images/github.png" alt=""></div>
         </div>
     </div>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-bar5 ul');
+            const hamburger = document.querySelector('.hamburger');
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
