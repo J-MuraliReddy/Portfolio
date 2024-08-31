@@ -193,113 +193,88 @@ html, body {
     transform: scale(1.2); /* Slightly enlarge on hover */
 }
 
-/* Responsive Image Styling */
-.img1 img {
-    width: 17vw; /* Default size for large screens */
+.img1 img{
+    width: 17vw; /* Use viewport width for responsiveness */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px;
     position: absolute;
     top: 78px;
-    right: 20vw; /* Default position for large screens */
-    max-width: 100%; /* Ensure image doesn't exceed its container */
-    max-height: 100%;
+    right: 20vw; /* Adjust the right position using viewport width */
 }
-
 @media (max-width: 968px) {
     .img1 img {
-        width: 25vw; /* Slightly larger for tablets */
-        top: 20vh;
-        right: 15vw; /* Adjusted position */
+        width: 25vw; /* Increase size for smaller screens */
+        top: 70px;
+        right: 15vw; /* Adjust the right position */
     }
 }
 
 /* Media Queries for Smaller Screens */
-/* Media Queries for Tablets (max-width: 768px) */
 @media (max-width: 768px) {
     .container h1 {
-        font-size: 5vw;
-    }
-
-        .nav-bar1 ul {
-            flex-direction: row; /* Stack items vertically */
-            align-items: center; /* Center the items */
-        }
-    
-        .nav-bar1 ul a {
-            padding: 5px 0; /* Increase padding for better spacing */
-            font-size: 1.9vw; /* Adjust font size for better readability */
-            margin: 5px 0; /* Add margin to space out links */
-        }
-    
-
-    .wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .wrapper .static-txt,
-    .dynamic-txts li {
-        font-size: 4.5vw;
-    }
-
-    .icons span {
-        width: 9vw;
-        height: 9vw;
-    }
-
-    .icons a {
-        font-size: 3.5vw;
-    }
-
-    .img1 img {
-        width: 20vw; /* Adjust width for tablets */
-        top: 28vh; /* Center vertically */
-        right: 10vw; /* Adjust right position */
-       
-    }
-}
-
-/* Media Queries for Mobile (max-width: 480px) */
-@media (max-width: 480px) {
-    .container h1 {
         font-size: 6vw;
-        text-align: center;
-    }
-
-    .nav-bar1 ul {
-        padding: 10px 0;
     }
 
     .nav-bar1 ul a {
-        font-size: 3.5vw;
-        padding-bottom: 3px;
+        font-size: 3vw;
+        padding-bottom: 5px;
     }
 
-    .wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .wrapper .static-txt,
-    .dynamic-txts li {
+    .wrapper .static-txt {
         font-size: 6vw;
-        text-align: center;
+    }
+
+    .dynamic-txts li {
+        font-size: 5vw;
     }
 
     .icons span {
-        width: 12vw;
-        height: 12vw;
+        width: 8vw;
+        height: 8vw;
     }
 
     .icons a {
         font-size: 4vw;
     }
-
+    
     .img1 img {
-        width: 45vw; /* Larger size for mobile */
-        top: 30vh; /* Center vertically */
-        right: 5vw; /* Adjust right position */
-       
+        width: 30vw; /* Increase size for smaller screens */
+        top: 70px;
+        right: 10vw; /* Adjust the right position */
     }
 }
 
+@media (max-width: 480px) {
+    .container h1 {
+        font-size: 7vw;
+    }
+
+    .nav-bar1 ul a {
+        font-size: 4vw;
+        padding-bottom: 5px;
+    }
+
+    .wrapper .static-txt {
+        font-size: 8vw;
+    }
+
+    .dynamic-txts li {
+        font-size: 6vw;
+    }
+
+    .icons span {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .icons a {
+        font-size: 3vw;
+    }
+
+    .img1 img {
+        width: 40vw; /* Further increase size for very small screens */
+        top: 70px;
+        right: 10vw; /* Keep consistent with above */
+    }
+    
+}
